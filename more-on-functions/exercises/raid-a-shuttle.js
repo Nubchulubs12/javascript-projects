@@ -7,7 +7,16 @@ function checkFuel(level) {
     return 'red';
   }
 }
-
+let fuelMass = function(a){
+  if (checkFuel(a) === "green"){
+    return a - 100000;
+  } else if (checkFuel(a) === "yellow"){
+    return a - 50000;
+  }
+  else {
+    return a;
+  }
+  }
 function holdStatus(arr){
   if (arr.length < 7) {
     return `Spaces available: ${7-arr.length}.`;
@@ -18,18 +27,48 @@ function holdStatus(arr){
   }
 }
 
+let organize = function(b){
+let arr = [];
+  if (!b.includes("gold", "AE-35 unit")){
+  return arr;
+} else {
+  arr.push(b[b.indexOf("gold")]);
+  b.splice(b.indexOf("gold"),1);
+b.push("silver");
+  
+  arr.push(b[b.indexOf("AE-35 unit")]);
+  b.splice(b.indexOf("AE-35 unit"),1);
+  b.push("used unit");
+  return arr;
+}
+}
+
+let iris = function(fuelLevel, cargoHold){
+let storage = organize(cargoHold);
+  return  `Raided ${fuelMass(fuelLevel)} kg of fuel from the tanks, and stole ${storage[0]} and ${storage[1]} from the cargo hold.`
+}
+
+
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
-
+// console.log(fuelLevel);
+// console.log(fuelMass(fuelLevel));
+// console.log(fuelLevel);
 console.log("Fuel level: " + checkFuel(fuelLevel));
+// console.log(fuelLevel);
 console.log("Hold status: " + holdStatus(cargoHold));
-
+// console.log(cargoHold);
+// console.log(organize(cargoHold));
+// console.log(cargoHold);
+console.log(iris(fuelLevel,cargoHold));
 /* Steal some fuel from the shuttle:
  */
- 
-//a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
 
-//b). You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
+//a). Define an anonymous function and set it equal to a variable with a normal,
+// non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
+
+//b). You must siphon off fuel without alerting the TAs. Inside your function, 
+//you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
 
 //c). Once you figure out how much fuel to pump out, return that value.
 
@@ -48,7 +87,7 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 /* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
  */
- 
+
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
 //b). Call your anonymous fuel and cargo functions from within irs.
