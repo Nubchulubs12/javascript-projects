@@ -1,9 +1,14 @@
+import recipedata from "./recipe.json";
+import "./styling.css";
 function RecipeImage() {
-   return;
- }
- 
- export default RecipeImage;
- 
- //import json file for the data
- //apply css for className recipeImage
- 
+  return(
+    <div>
+      <img className="recipeImage" src={recipedata[0].recipeImage} alt={recipedata[0].name}></img>
+    </div>
+  );
+}
+
+export default RecipeImage;
+
+//import json file for the data
+//apply css for className recipeImage
