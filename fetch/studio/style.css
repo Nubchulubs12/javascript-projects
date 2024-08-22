@@ -14,3 +14,28 @@
     margin-bottom: 20px;
     border-radius: 6px;
 }
+
+.active {
+    color:green;
+}
+#count{
+    margin: 2%;
+    padding: 3%;
+    text-decoration: underline;
+    text-align: left;
+}
+#container{
+    margin: 1%;
+    padding: 1%;
+    
+}
+
+.astronaut{
+    margin: 2%;
+    padding: 2%;
+    
+}
+h1{
+    text-align: center;
+}
+

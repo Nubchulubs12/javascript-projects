@@ -1,16 +1,30 @@
 function randomSelection(arr){
-   let index = Math.floor(Math.random()*arr.length);
-   return arr[index];
- }
- 
- let happiness = ['Hope', 'Joy', 'Peace', 'Love', 'Kindness', 'Puppies', 'Kittens', 'Tortoise'];
- 
- let words = ['Hello', 'World', 'Python', 'JavaScript', 'Rutabaga'];
- 
- for (i=0; i < 8; i++){
-   console.log(randomSelection(happiness));
- }
- 
+let index = Math.floor(Math.random()*arr.length);
+  return arr[index];
+}
+
+let happiness = ['Hope', 'Joy', 'Peace', 'Love', 'Kindness', 'Puppies', 'Kittens', 'Tortoise'];
+
+let words = ['Hello', 'World', 'Python', 'JavaScript', 'Rutabaga'];
+
+// for (i=0; i < 3; i++){
+//   console.log(randomSelection(selectArr));
+// }
+function arrRando(arr1, arr2) {
+  let arrOfarr = [arr1, arr2];
+  let selectArr = randomSelection(arrOfarr);
+  let picks = [];
+  for (i = 0; i < 2; i++){
+    picks.push(randomSelection(selectArr));
+  }
+
+  return picks;
+  
+}
+
+
+
+console.log(arrRando(happiness, words));
  //Experiment with the code above. Try to:
  //a) Print 3 random selections from each array.
  //b) Have the code randomly pick one array, and then print 2 random items from it.
