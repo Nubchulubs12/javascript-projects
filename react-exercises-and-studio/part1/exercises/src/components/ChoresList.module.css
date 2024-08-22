@@ -1,0 +1,28 @@
+.choresText {
+   color: orangered;
+   font-family: cursive ;
+   text-decoration: underline;
+   text-align: right;
+}
+
+.choresHeading {
+   color: orange;
+   font-family: cursive;
+   text-align: right;
+}
+
+ul {
+   padding-left: 0;
+   list-style-position: inside;
+   text-align: center;
+}
+
+li {
+   color: orangered;
+   font-family: cursive;
+   text-decoration: underline;
+   margin: 0;
+}
+
+
+
