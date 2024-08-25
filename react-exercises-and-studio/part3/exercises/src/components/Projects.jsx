@@ -2,17 +2,15 @@ import data from '../data.json';
 import { useState } from 'react';
 
 export default function MyProjects() {
-   const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   function handleClick() {
-   if (index < data.projects.length-1)
-   {
+    if (index < data.projects.length - 1) {
       setIndex(index + 1);
-   }
-   else
-   {
+    }
+    else {
       setIndex(0);
-   }
+    }
   }
 
   let projects = data.projects;
