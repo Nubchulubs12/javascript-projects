@@ -1,24 +1,24 @@
 import { useState } from 'react';
 
 const RecipeAuthor = () => {
-   let authorLink = "";
-   let authorPhoto = "";
-   let authorName = "";
+   let authorLink = "https://preppykitchen.com/peanut-butter-cookies-recipe/";
+   let authorPhoto = "https://preppykitchen.com/wp-content/uploads/2020/09/New-Headshot-Round-60-2.jpg";
+   let authorName = "John Kanell";
 
    return (
       <div>
-         <img src={authorPhoto} alt = "" style={{objectFit: "contain", borderRadius: "50%"}} />
+         <img src={authorPhoto} alt="" style={{ objectFit: "contain", borderRadius: "50%" }} />
          <div>
             <h3>{authorName}</h3>
-            <a href={authorLink}></a> 
+            <a href={authorLink}></a>
          </div>
       </div>
    );
 }
 
 const RecipeIngredients = () => {
-   const ingredients = [];
-   return(
+   const ingredients = ["PeanutButter", "BrownSugar", "CreamButter", "granulatedSugar", "egg"];
+   return (
       <div>
          <h3>Recipe Ingredients</h3>
          <ul>
@@ -34,10 +34,10 @@ const RecipeIngredients = () => {
 
 const RecipeDescription = () => {
    return (
-      <div> 
+      <div>
          <div>
-            <h1></h1>
-            <p></p>
+            <h1>Recipe Title</h1>
+            <p>Short recipe description</p>
          </div>
          <div className="recipePhotoBlock">
             <RecipeIngredients />
@@ -49,12 +49,13 @@ const RecipeDescription = () => {
 
 const RecipePhoto = () => {
    return (
-      <img src="" alt="" className="imageUpdates"/>
+      <img src="https://preppykitchen.com/wp-content/uploads
+/2020/04/Peanut-butter-cookies-feature-1.jpg" alt="Peanut Butter Cookies" className="imageUpdates" />
    );
 }
 
-export default function RecipeDisplay () {
-   return(
+export default function RecipeDisplay() {
+   return (
       <div className="recipePhotoBlock">
          <RecipePhoto />
          <div>
